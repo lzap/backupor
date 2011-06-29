@@ -8,7 +8,7 @@ function download(logger, service) {
       if (req.statusText) console.log(req.statusText);
       if (req.status = 200) {
         // store it
-        store(service, req.responseText);
+        insert_object(service, req.responseText);
         if (logger) logger("DONE<br/>");
       }
     }

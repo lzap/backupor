@@ -10,7 +10,7 @@ function open() {
   M.setDebugLevel(Migrator.DEBUG_HIGH);
 
   M.migration(1, function(t){
-    t.executeSql("create table services(id integer primary key autoincrement, text name, text type)");
+    t.executeSql("create table services(id integer primary key autoincrement, text name, text type, integer last_backup)");
     t.executeSql("create table objects(id integer primary key autoincrement, blob data)");
   });
 
@@ -26,11 +26,10 @@ function destroy() {
   }
 }
 
-function store(service, data) {
+function insert_object(service, data) {
   if (db == null) open();
   db.transaction(function (tx) {
     tx.executeSql('insert into objects (data) values (?)', [data]);
   });
-  localStorage.setItem(service.name, data);
 };
 
