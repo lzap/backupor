@@ -10,6 +10,7 @@ function open() {
   M.setDebugLevel(Migrator.DEBUG_HIGH);
 
   M.migration(1, function(t){
+    t.executeSql("create table services(id integer primary key autoincrement, text name, text type)");
     t.executeSql("create table objects(id integer primary key autoincrement, blob data)");
   });
 
@@ -17,7 +18,12 @@ function open() {
 }
 
 function destroy() {
-  db.executeSql("drop table objects");
+  var objects = ["table services", "table objects"];
+  for (var i = 0; i < objects.length; i++) {
+    db.transaction(function (tx) {
+      db.executeSql("drop " + objects[i]);
+    });
+  }
 }
 
 function store(service, data) {

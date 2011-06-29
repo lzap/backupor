@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Backupor Options</title>
+    <script src="../javascript/options.js"></script>
+  </head>
+
+  <body onload="restore_options()">
+
+    Update iterval:
+    <select id="interval">
+      <option value="12">Every 12 hours</option>
+      <option value="24">Everyday</option>
+      <option value="48">Every two days</option>
+      <option value="168">Weekly</option>
+      <option value="762">Every four weeks</option>
+    </select>
+
+    <br>
+    <button onclick="save_options()">Save</button>
+    <br/></br>
+    <div id="status"/>
+  </body>
+</html>
+

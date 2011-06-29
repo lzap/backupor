@@ -6,6 +6,7 @@
     "default_icon": "images/icon-16.png",
     "popup": "views/popup.html"
   },
+  "options_page": "views/options.html",
   "permissions": [
     "http://www.gnu.org/",
     "http://www.blogger.com/",
