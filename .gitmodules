@@ -1,0 +1,3 @@
+[submodule "ext/javascript/lib/migrator"]
+	path = ext/javascript/lib/migrator
+	url = git://github.com/nanodeath/JS-Migrator.git
