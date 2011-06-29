@@ -1,0 +1,3 @@
+#!/bin/sh
+convert -resize 128x128 -transparent-color white backupor-icon.svg icon-128.png
+convert -resize 16x16 -transparent-color white backupor-icon.svg icon-16.png

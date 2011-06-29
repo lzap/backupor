@@ -1,0 +1,20 @@
+{
+  "name": "Backupor",
+  "version": "1.0",
+  "description": "Periodidally creates backups from your online services like Blogger etc.",
+  "browser_action": {
+    "default_icon": "images/icon-16.png",
+    "popup": "views/popup.html"
+  },
+  "permissions": [
+    "http://www.gnu.org/",
+    "http://www.blogger.com/",
+    "http://lukas.zapletalovi.com/",
+    "unlimitedStorage",
+    "idle"
+  ],
+  "icons": {
+    "128": "images/icon-128.png",
+    "16":"images/icon-16.png"
+  }
+}
