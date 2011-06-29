@@ -6,9 +6,11 @@ function download(logger, service) {
     if (req.readyState == 4) {
       console.log("Download complete: " + service.url() + " status " + req.status);
       if (req.statusText) console.log(req.statusText);
-      // store it
-      store(logger, service, req.responseText);
-      if (logger) logger("DONE<br/>");
+      if (req.status = 200) {
+        // store it
+        store(service, req.responseText);
+        if (logger) logger("DONE<br/>");
+      }
     }
   };
   if (logger) logger("Downloading: " + service.name);
